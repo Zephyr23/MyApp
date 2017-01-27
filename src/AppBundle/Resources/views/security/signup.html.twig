@@ -1,0 +1,67 @@
+{% extends 'AppBundle::base.html.twig' %}
+{% block body %}
+    <div id="wrap">
+    <header class="masthead">
+        <div class="slider-container" id="slider">
+            <div class="btn-group-lg">
+                <a href="{{ path('homepage') }}" class="btn btn-logIn sp-effect3 active animated fadeInRight">back</a>
+            </div>
+            <div class="container">
+                <div class="row mh-container">
+                    <h1><span>Perfect </span> Online Scripts</h1>
+                    <div class="col-md-12 col-centered">
+                        <div class="btn-group-justified">
+                            {{ form_start(form) }}
+                            {{ form_row(form.username) }}
+                            {{ form_row(form.email) }}
+                            {{ form_row(form.plainPassword.first) }}
+                            {{ form_row(form.plainPassword.second) }}
+
+                            <button type="submit">Register!</button>
+                            {{ form_end(form) }}
+                            <form action="{{ path('security_signup') }}" method="post">
+                                <div class="form-group">
+                                    SIGNUP PAGE
+                                <input type="text" class="form-control" id="username" name="_username" placeholder="Username" value="" />
+                                </div>
+                                <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password" name="_password" />
+                                </div>
+                                <div class="btn-group-lg">
+                                    <button type="submit" class="btn btn-sigUp sp-effect3 active animated fadeInRight">Sign up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    </div>
+
+    {#
+        If you want to control the URL the user
+        is redirected to on success (more details below)
+        <input type="hidden" name="_target_path" value="/account" />
+    #}
+
+{% endblock %}
+{% block javascript %}
+    <script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script>
+    <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/waypoints.min.js') }}"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+
+    <script src="{{ asset('bundles/app/js/script.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            appMaster.preLoader();
+        });
+    </script>
+{% endblock %}
