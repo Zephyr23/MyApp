@@ -1,0 +1,36 @@
+<!-- Fixed navbar -->
+<div class="navbar navbar-static-top" id="nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-align-justify"></i>
+            </button>
+            <a class="navbar-brand" href={{ path('homepage') }}>
+                Gde
+                <img src="{{ asset('bundles/app/img/logo2.png')}}" alt="">
+                Pivo
+
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav social hidden-xs hidden-sm">
+                <li><a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest fa-lg fa-fw"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin fa-lg fa-fw"></i></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#contact">contact</a></li>
+                <li><a href="{{ path('fos_user_security_login') }}">login</a></li>
+                <li><a href="{{ path('fos_user_registration_register') }}">signup</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!--/.container -->
+</div>
+<!--/.navbar -->
