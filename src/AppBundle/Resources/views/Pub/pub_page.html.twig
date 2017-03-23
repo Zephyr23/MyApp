@@ -6,7 +6,13 @@
     <div id="wrap">
         {% include 'AppBundle:Partial:navbar.html.twig' %}
         <header class="masthead">
+        {% if pub.picture %}
         {% media pub.picture, 'big' with {'class': 'wallpaper'}%}
+        {% else %}
+            <div class="media">
+                <img class="wallpaper" src="{{ asset('bundles/app/img/default1.png') }}">
+            </div>
+        {% endif %}
         <div class="profileImg hidden-xs">
             {% include 'AppBundle:Partial:ppcounter.html.twig'  with {'pub':pub,'pubs': 10 , 'numI': numI, 'numB':numB } %}
         </div>

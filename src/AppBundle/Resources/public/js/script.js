@@ -188,7 +188,7 @@ var appMaster = {
             var mapElement = document.getElementById('map');
             var map = new google.maps.Map(mapElement, mapOptions);
             var infoWindow = new google.maps.InfoWindow({map: map});
-
+            var infowindow = new google.maps.InfoWindow();
             // Get the HTML DOM element that will contain your map
             // We are using a div with id="map" seen below in the <body>
 
@@ -223,7 +223,6 @@ var appMaster = {
 
 
             var objects = [];
-            var infowindow = new google.maps.InfoWindow();
             var marker;
             $.ajax({
                 type: 'GET',

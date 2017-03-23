@@ -1453,3 +1453,8 @@ a:hover, a:active, a:visited, a:focus{
 .first , .second, .third{
   margin-top: 20px;
 }
+
+.imageSmall{
+  width: 104px;
+  height: 101px;
+}
