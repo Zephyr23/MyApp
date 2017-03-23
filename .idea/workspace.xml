@@ -2,9 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1e318ae-5e82-4f76-94ba-021e2dfa1bb0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/ApplicationSonataMediaBundle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Document/Gallery.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Document/Media.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Entity/Gallery.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Entity/GalleryHasMedia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Entity/Media.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/Gallery.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/GalleryHasMedia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/GalleryHasMediaRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/GalleryRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/Media.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/MediaRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Gallery.mongodb.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Gallery.orm.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Gallery.phpcr.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/GalleryHasMedia.orm.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/GalleryHasMedia.phpcr.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Media.mongodb.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Media.orm.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Media.phpcr.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Document.Gallery.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Document.GalleryHasMedia.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Document.Media.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Entity.Gallery.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Entity.GalleryHasMedia.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Entity.Media.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Beer/beer_page.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Beer/beer_page.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Partial/beerlist.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Partial/beerlist.html.twig" />
     </list>
     <ignored path="my_project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,6 +50,30 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - nenad@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - nenad@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="media__gallery" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -33,16 +81,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="publist.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Partial/publist.html.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -56,18 +94,18 @@
       <file leaf-file-name="beerlist.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Partial/beerlist.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+            <state relative-caret-position="72">
+              <caret line="4" column="81" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="81" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beer_page.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="beer_page.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Beer/beer_page.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+            <state relative-caret-position="-108">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -83,56 +121,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pubGallery.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Partial/pubGallery.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="1456" column="11" selection-start-line="1456" selection-start-column="1" selection-end-line="1456" selection-end-column="11" />
+            <state relative-caret-position="485">
+              <caret line="1459" column="1" selection-start-line="1459" selection-start-column="1" selection-end-line="1459" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/js/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="224" column="29" selection-start-line="224" selection-start-column="29" selection-end-line="224" selection-end-column="29" />
-              <folding>
-                <element signature="e#2759#6581#0" expanded="false" />
-                <element signature="e#7786#7929#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/bundles/app/js/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+            <state relative-caret-position="-81">
+              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding>
+                <element signature="e#7#47#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeerController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BeerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="23" column="69" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeerAdmin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Admin/BeerAdmin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -146,7 +181,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
   </component>
@@ -192,7 +227,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Partial/navbar.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Modal/hoursmodal.html.twig" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
@@ -204,6 +238,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Partial/publist.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Partial/beerlist.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Beer/beer_page.html.twig" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
       </list>
     </option>
   </component>
@@ -278,7 +313,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,11 +327,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
+              <option name="myItemId" value="sonata-project" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -310,15 +345,41 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
+              <option name="myItemId" value="sonata-project" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="media-bundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sonata-project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media-bundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -333,50 +394,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -394,71 +411,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
+              <option name="myItemId" value="Application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
+              <option name="myItemId" value="Sonata" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pub" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Beer" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
+              <option name="myItemId" value="MediaBundle" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -608,7 +569,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334199000" />
+    <option name="totallyTimeSpent" value="335267000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -627,9 +588,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33010754" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31453842" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26881722" sideWeight="0.49806523" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26881722" sideWeight="0.49806523" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -695,9 +656,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/bundles/app/img/sprites.png" />
-    <entry file="file://$PROJECT_DIR$/web/bundles/app/img/slider.png" />
-    <entry file="file://$PROJECT_DIR$/web/bundles/app/img/slide1.png" />
     <entry file="file://$PROJECT_DIR$/web/bundles/app/img/screenshot.png" />
     <entry file="file://$PROJECT_DIR$/web/bundles/app/img/pattern.png" />
     <entry file="file://$PROJECT_DIR$/web/bundles/app/img/map_pin.png" />
@@ -724,13 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="98" selection-start-line="1" selection-start-column="98" selection-end-line="1" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BeerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="23" column="69" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -785,19 +736,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/profile/profile.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml" />
-    <entry file="dbDummy://dbtable:/e475e31c/281151ca-0a24-4d0a-a0cc-5e87669be600/nenad.media__gallery">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
@@ -881,7 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Pub.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2700">
@@ -893,7 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3006">
           <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,16 +838,8 @@
         <state relative-caret-position="720">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="e#40#99#0#PHP" expanded="true" />
+            <element signature="e#40#99#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -919,14 +847,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="55" column="140" selection-start-line="55" selection-start-column="140" selection-end-line="55" selection-end-column="140" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="224" column="29" selection-start-line="224" selection-start-column="29" selection-end-line="224" selection-end-column="29" />
+        <state relative-caret-position="668">
+          <caret line="296" column="29" selection-start-line="296" selection-start-column="29" selection-end-line="296" selection-end-column="29" />
           <folding>
             <element signature="e#2759#6581#0" expanded="false" />
             <element signature="e#7786#7929#0" expanded="false" />
@@ -936,10 +863,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/bundles/app/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1490310357934" expanded="true" signature="0:119" ph="/*...*/" />
+            <marker date="1490310357934" expanded="true" signature="151:11332" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="179:443" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="245:343" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="380:437" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="468:813" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="478:526" ph="/*...*/" />
+            <marker date="1490310357934" expanded="true" signature="569:679" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="591:669" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="691:738" ph="/*...*/" />
+            <marker date="1490310357934" expanded="true" signature="767:805" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="845:1550" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="1034:1542" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="1164:1532" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="1335:1518" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="1380:1458" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="1579:1779" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="1589:1629" ph="/*...*/" />
+            <marker date="1490310357934" expanded="true" signature="1672:1771" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="1709:1753" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="1810:1973" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="2002:2301" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="2070:2110" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="2154:2202" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="2245:2293" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="2557:10395" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="2571:2729" ph="//..." />
+            <marker date="1490310357934" expanded="true" signature="2759:6581" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="3082:3230" ph="//..." />
+            <marker date="1490310357934" expanded="true" signature="3255:6567" ph="[...]" />
+            <marker date="1490310357934" expanded="true" signature="3529:3727" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="3749:3927" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="3949:4124" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="4146:4329" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="4351:4522" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="4544:4722" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="4744:4923" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="4945:5124" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="5146:5332" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="5354:5541" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="5563:5737" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="5759:5949" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="5971:6143" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="6165:6345" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="6367:6549" ph="{...}" />
+            <marker date="1490310357934" expanded="true" signature="10435:11330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -962,8 +934,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="1456" column="11" selection-start-line="1456" selection-start-column="1" selection-end-line="1456" selection-end-column="11" />
+        <state relative-caret-position="485">
+          <caret line="1459" column="1" selection-start-line="1459" selection-start-column="1" selection-end-line="1459" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -978,8 +950,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Partial/beerlist.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+        <state relative-caret-position="72">
+          <caret line="4" column="81" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="81" />
           <folding />
         </state>
       </provider>
@@ -994,9 +966,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Beer/beer_page.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state relative-caret-position="-108">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BeerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="69" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Admin/BeerAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/e475e31c/281151ca-0a24-4d0a-a0cc-5e87669be600/nenad.media__gallery">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-81">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#7#47#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
