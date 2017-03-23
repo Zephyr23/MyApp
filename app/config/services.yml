@@ -8,7 +8,34 @@ services:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
      app.form.registration:
-         class: AppBundle\Form\RegistrationType
-         scope: request
-         #calls:
-          #   - [ setFormType, [ "@app.form.registration" ] ]
+        class: AppBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }
+
+     app.admin.pub:
+        class: AppBundle\Admin\PubAdmin
+        arguments: [~, AppBundle\Entity\Pub, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gde na pivo, label: Pub }
+
+     app.admin.address:
+        class: AppBundle\Admin\AddressAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gde na pivo, label: Address }
+        arguments:
+            - ~
+            - AppBundle\Entity\Address
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+     app.admin.beer:
+        class: AppBundle\Admin\BeerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gde na pivo, label: Beer }
+        arguments:
+            - ~
+            - AppBundle\Entity\Beer
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [AppBundle]]

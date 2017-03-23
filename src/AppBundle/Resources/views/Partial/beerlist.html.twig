@@ -1,0 +1,21 @@
+<div class="container">
+{% for beer in beers %}
+        {%  if loop.index0 % 3 == 0 %} <div id="beers" class="row"> {% endif %}
+                <div class="col-md-4">
+                    <div class="tile p{{ loop.index%5 }} scrollpoint sp-effect6">
+                        <div class="media">
+                            <a  href="{{ path('beer', {'name' : beer.name}) }}">
+                                {% thumbnail beer.picture, 'small' with{'class' : 'img-rounded img-responsive'} %}
+                            </a>
+                        </div>
+                        <div class="details">
+                            <h3 class="media-heading heading" >
+                                {{ beer.name }}
+                            </h3>
+                            {% include 'AppBundle:Partial:ratingstars.html.twig' %}
+                        </div>
+                    </div>
+                </div>
+    {%  if loop.index0 % 3 == 2 or loop.last%} </div> {% endif %}
+{% endfor %}
+</div>

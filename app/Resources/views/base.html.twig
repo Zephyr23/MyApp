@@ -3,18 +3,171 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Online Scripts{% endblock %}</title>
+        <title>{% block title %}Gde na pivo{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon3.ico') }}" >
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" >
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('apple-icon-57x57.png') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('apple-icon-60x60.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('apple-icon-76x76.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('apple-icon-120x120.png') }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('apple-icon-144x144.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('apple-icon-152x152.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-icon-180x180.png') }}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('android-icon-192x192.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon-96x96.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('manifest.json') }}">
+
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/animate.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/owl.carousel.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/owl.theme.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/styles.css') }}">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+        {% endblock %}
+        {% block javascripts %}
+
+
+            <script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script>
+            <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/owl.carousel.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/waypoints.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/jquery.counterup.min.js') }}"></script>
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+            <script src="{{ asset('bundles/app/js/script.js') }}"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+            <!-- jQuery REVOLUTION Slider  -->
+            <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPjWQfwUf6AEAOuCjMESsg0YAiFTcqBFY&libraries=geometry"></script>
+
+            <script>
+                $(document).ready(function() {
+                    appMaster.preLoader();
+                });
+
+                $('.btn-signUp').on('click', function () {
+
+                    $('.dropdown').toggleClass('hide');
+
+                })
+
+                $('.fa-chevron-down').on('click', function () {
+                    console.log('fdsfgsdagasd');
+                    $('.dropdown').removeClass('hidden');
+                    $(this).addClass('hidden');
+                })
+                $('.pubnav').on('click', function () {
+
+                    $('#packages').toggleClass('hidden');
+
+                })
+
+                $('.big-title').on('click', function () {
+
+                    $('.big-title').addClass('hidden-md hidden-lg');
+                    $('.big-title1').removeClass('hidden');
+
+                })
+
+                $('.pubs').on('click', function () {
+
+                    if( $('.second').hasClass('visible')){
+                        $('.second').toggleClass('hidden');
+                        $('.second').toggleClass('visible');
+                        $('.about').toggleClass('hidden-xs');
+                        $('.about').toggleClass('hidden-sm');
+
+                    }
+                    if( $('.third').hasClass('visible')){
+                        $('.third').toggleClass('hidden');
+                        $('.third').toggleClass('visible');
+                        $('.about').toggleClass('hidden-xs');
+                        $('.about').toggleClass('hidden-sm');
+
+                    }
+
+                    $('.first').toggleClass('hidden');
+                    $('.first').toggleClass('visible');
+                    $('.about').toggleClass('hidden-xs');
+                    $('.about').toggleClass('hidden-sm');
+
+
+
+                })
+
+                $('.beers').on('click', function () {
+
+                    if( $('.first').hasClass('visible')){
+                        $('.first').toggleClass('hidden');
+                        $('.first').toggleClass('visible');
+                        $('.about').toggleClass('hidden-xs');
+                        $('.about').toggleClass('hidden-sm');
+
+                    }
+                    if( $('.third').hasClass('visible')){
+                        $('.third').toggleClass('hidden');
+                        $('.third').toggleClass('visible');
+                        $('.about').toggleClass('hidden-xs');
+                        $('.about').toggleClass('hidden-sm');
+
+                    }
+                    $('.second').toggleClass('hidden');
+                    $('.second').toggleClass('visible');
+                    $('.about').toggleClass('hidden-xs');
+                    $('.about').toggleClass('hidden-sm');
+
+                })
+                $('.reviews').on('click', function () {
+
+                    if( $('.first').hasClass('visible')){
+                        $('.first').toggleClass('hidden');
+                        $('.first').toggleClass('visible');
+                        $('.about').toggleClass('hidden-xs');
+                        $('.about').toggleClass('hidden-sm');
+
+                    }
+                    if( $('.second').hasClass('visible')){
+                        $('.second').toggleClass('hidden');
+                        $('.second').toggleClass('visible');
+                        $('.about').toggleClass('hidden-xs');
+                        $('.about').toggleClass('hidden-sm');
+
+                    }
+                    $('.third').toggleClass('hidden');
+                    $('.third').toggleClass('visible');
+                    $('.about').toggleClass('hidden-xs');
+                    $('.about').toggleClass('hidden-sm');
+
+                })
+
+                // Counter
+                jQuery(document).ready(function($) {
+                    $('.statistic-counter').counterUp({
+                        delay: 5,
+                        time: 500
+                    });
+                });
+
+
+            </script>
+
+
+
+        {% endblock %}
     </body>
 </html>

@@ -1,0 +1,124 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% include 'AppBundle:Partial:preloader.html.twig' %}
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+        {% include 'AppBundle:Partial:navbar.html.twig' %}
+        <header class="masthead">
+                {% media beer.picture, 'big' with{ 'class':'wallpaper'}%}
+                <div class="jumbotron jumbotron-fluid info">
+                    <div class="container">
+                        <h1 class="display-3">{{ beer.name }}</h1>
+                    </div>
+                </div>
+            <section id="features" style="background-color: gray ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-push-2 clearfix">
+                            <div class="section-heading scrollpoint sp-effect3">
+                                <h3>reviews</h3>
+                                <span class="divider"></span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore reiciendis vel reprehenderit expedit!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-6">
+                                                <div class="feature scrollpoint sp-effect2">
+                                                    <div class="icon">
+                                                        <i class="fa fa-weixin fa-4x"></i>
+                                                    </div>
+                                                    <h4>Document File</h4>
+                                                    <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6">
+                                                <div class="feature scrollpoint sp-effect2">
+                                                    <div class="icon">
+                                                        <i class="fa fa-weixin fa-4x"></i>
+                                                    </div>
+                                                    <h4>Document File</h4>
+                                                    <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6">
+                                                <div class="feature scrollpoint sp-effect2">
+                                                    <div class="icon">
+                                                        <i class="fa fa-weixin fa-4x"></i>
+                                                    </div>
+                                                    <h4>Document File</h4>
+                                                    <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6">
+                                                <div class="feature scrollpoint sp-effect2">
+                                                    <div class="icon">
+                                                        <i class="fa fa-weixin fa-4x"></i>
+                                                    </div>
+                                                    <h4>Document File</h4>
+                                                    <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-6">
+                                                <div class="feature scrollpoint sp-effect2">
+                                                    <div class="icon">
+                                                        <i class="fa fa-weixin fa-4x"></i>
+                                                    </div>
+                                                    <h4>Document File</h4>
+                                                    <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6">
+                                                <div class="feature scrollpoint sp-effect2">
+                                                    <div class="icon">
+                                                        <i class="fa fa-weixin fa-4x"></i>
+                                                    </div>
+                                                    <h4>Document File</h4>
+                                                    <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6">
+                                                <div class="feature scrollpoint sp-effect2">
+                                                    <div class="icon">
+                                                        <i class="fa fa-weixin fa-4x"></i>
+                                                    </div>
+                                                    <h4>Document File</h4>
+                                                    <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6">
+                                                <div class="feature scrollpoint sp-effect2">
+                                                    <div class="icon">
+                                                        <i class="fa fa-weixin fa-4x"></i>
+                                                    </div>
+                                                    <h4>Document File</h4>
+                                                    <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                </ol>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        {% include 'AppBundle:Partial:footer.html.twig' %}
+    </div>
+{% endblock %}

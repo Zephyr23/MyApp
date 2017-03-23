@@ -10,13 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller
 {
-    /**
-     * @Route("/profile", options={"expose"=true}, name="user_profile")
-     */
-    public function userAction(Request $request)
-    {
 
-        return $this->render('AppBundle:profile:profile.html.twig');
-    }
 
 }

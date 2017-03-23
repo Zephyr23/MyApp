@@ -485,7 +485,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 
   100% {
-    opacity: 1;
+    opacity: 0.9;
     -webkit-transform: scale(1);
     transform: scale(1);
   }
@@ -513,7 +513,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 
   100% {
-    opacity: 1;
+    opacity: 0.9;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);

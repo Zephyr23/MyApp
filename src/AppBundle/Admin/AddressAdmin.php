@@ -7,15 +7,31 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class AddressAdmin extends PubAdmin
+class AddressAdmin extends Admin
 {
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper
+            ->addIdentifier('streetName')
+            ->addIdentifier('streetNumber')
+            ->addIdentifier('postcode')
+            ->addIdentifier('city')
+            ->addIdentifier('district')
+        ;
+    }
+
+    protected function configureDatagridFilters(DatagridMapper $filterMapper)
+    {
+    }
+
     protected function configureFormFields(FormMapper $formMapper)
     {
-        parent::configureFormFields($formMapper);
-
         $formMapper
-            ->with('form.group_general')
-            ->add('date', 'date')
+            ->add('streetName')
+            ->add('streetNumber')
+            ->add('postcode')
+            ->add('city')
+            ->add('district')
             ->end()
         ;
     }

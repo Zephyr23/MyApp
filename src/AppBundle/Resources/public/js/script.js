@@ -94,128 +94,193 @@ var appMaster = {
             // Basic options for a simple Google Map
             // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
             var mapOptions = {
-                zoom: 14,
-                draggable: false,
-                zoomControl: true, 
-                scrollwheel:false,
-                streetViewControl:false,
+                zoom: 15,
+                draggable: true,
+                zoomControl: true,
+                scrollwheel: false,
+                streetViewControl: false,
 
                 // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(31.1997396,29.9194378), // New York
-
-                // How you would like to style the map. 
+                center: new google.maps.LatLng(44.7866, 20.4489), // Belgrade
+                // How you would like to style the map.
                 // This is where you would paste any style found on Snazzy Maps.
                 styles: [
+                    {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
                     {
-                        "featureType": "landscape",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
+                        featureType: 'administrative.locality',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#de5749'}]
                     },
                     {
-                        "featureType": "transit",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
+                        featureType: 'poi',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#de5749'}]
                     },
                     {
-                        "featureType": "poi",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
+                        featureType: 'poi.park',
+                        elementType: 'geometry',
+                        stylers: [{color: '#263c3f'}]
                     },
                     {
-                        "featureType": "water",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
+                        featureType: 'poi.park',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#6b9a76'}]
                     },
                     {
-                        "featureType": "road",
-                        "elementType": "labels.icon",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
+                        featureType: 'road',
+                        elementType: 'geometry',
+                        stylers: [{color: '#38414e'}]
                     },
                     {
-                        "stylers": [
-                            {
-                                "hue": "#00aaff"
-                            },
-                            {
-                                "saturation": -100
-                            },
-                            {
-                                "gamma": 2.15
-                            },
-                            {
-                                "lightness": 12
-                            }
-                        ]
+                        featureType: 'road',
+                        elementType: 'geometry.stroke',
+                        stylers: [{color: '#212a37'}]
                     },
                     {
-                        "featureType": "road",
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "visibility": "on"
-                            },
-                            {
-                                "lightness": 24
-                            }
-                        ]
+                        featureType: 'road',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#9ca5b3'}]
                     },
                     {
-                        "featureType": "road",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "lightness": 57
-                            }
-                        ]
+                        featureType: 'road.highway',
+                        elementType: 'geometry',
+                        stylers: [{color: '#746855'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry.stroke',
+                        stylers: [{color: '#1f2835'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#f3d19c'}]
+                    },
+                    {
+                        featureType: 'transit',
+                        elementType: 'geometry',
+                        stylers: [{color: '#2f3948'}]
+                    },
+                    {
+                        featureType: 'transit.station',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#de5749'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'geometry',
+                        stylers: [{color: '#17263c'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#515c6d'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.stroke',
+                        stylers: [{color: '#17263c'}]
                     }
                 ]
             };
-
-            // Get the HTML DOM element that will contain your map 
-            // We are using a div with id="map" seen below in the <body>
             var mapElement = document.getElementById('map');
+            var map = new google.maps.Map(mapElement, mapOptions);
+            var infoWindow = new google.maps.InfoWindow({map: map});
+
+            // Get the HTML DOM element that will contain your map
+            // We are using a div with id="map" seen below in the <body>
 
             // Create the Google Map using out element and options defined above
-            var map = new google.maps.Map(mapElement, mapOptions);
-            var myLatlng = new google.maps.LatLng(31.1997396,29.9194378);
-            var image = {
-                url: '../img/map_pin.png',
-                // This marker is 20 pixels wide by 32 pixels tall.
-                size: new google.maps.Size(64, 93),
-                // The origin for this image is 0,0.
-                origin: new google.maps.Point(0, 0),
-                // The anchor for this image is the base of the flagpole at 0,32.
-                anchor: new google.maps.Point(0, 32)
-            };
 
-            var marker = new google.maps.Marker({
-                position: myLatlng,
-                icon: image,
-                map: map,
-                title: 'Hello World!'
+            var currentPos;
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    currentPos= new google.maps.LatLng(pos.lat, pos.lng);
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Location found.');
+                    map.setCenter(pos);
+                }, function () {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                    'Error: The Geolocation service failed.' :
+                    'Error: Your browser doesn\'t support geolocation.');
+            }
+
+
+            var objects = [];
+            var infowindow = new google.maps.InfoWindow();
+            var marker;
+            $.ajax({
+                type: 'GET',
+                url: Routing.generate('map'),
+                data: {get_param: 'name'},
+                dataType: "json",
+                success: function (data) {
+                    for (var key in data) {
+                        if (data.hasOwnProperty(key)) {
+                            var val = data[key];
+                            objects.push({
+                                name: val.name,
+                                address: val.address,
+                                lat: val.latitude,
+                                lng: val.longitude
+                            });
+
+                        }
+                    }
+
+                    for (var i = 0, object; object = objects[i]; i++) {
+                        addMarker(object);
+                    }
+
+                },
+                error: function (data) {
+                    console.log(data);
+                }
             });
 
+            function addMarker(object) {
+                marker = new google.maps.Marker({
+                    animation: google.maps.Animation.DROP,
+                    position: {lat: object.lat, lng: object.lng},
+                    icon: '../bundles/app/img/bar.png',
+                    map: map
+                });
+
+                var distPos =  new google.maps.LatLng(object.lat, object.lng);
+                var distance = google.maps.geometry.spherical.computeDistanceBetween(currentPos, distPos)/1000;
+                var d=parseFloat(Math.round(distance * 100) / 100).toFixed(2);
+                //alert(d+'km' + object.name);
+
+                google.maps.event.addListener(marker, 'click', (function (marker) {
+                    return function () {
+                        infowindow.setContent(object.name + '<br>' + object.address + '<br>' + d +'km');
+                        infowindow.open(map, marker);
+                    }
+                })(marker));
+
+                // marker.addListener('click', toggleBounce);
+                // marker.setMap(map);
+            }
+
         }
+
+
     },
     animateScript: function() {
         $('.scrollpoint.sp-effect1').waypoint(function(){$(this).toggleClass('active');$(this).toggleClass('animated fadeInLeft');},{offset:'100%'});
@@ -232,7 +297,7 @@ $(document).ready(function() {
 
     appMaster.smoothScroll();
     appMaster.animateScript();
-    appMaster.navSpy();
+    //appMaster.navSpy();
     appMaster.scollToTop();
     appMaster.headerSlider();
     appMaster.owlCarousel();

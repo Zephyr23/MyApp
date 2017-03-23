@@ -1,0 +1,22 @@
+<div class="container">
+{% for pub in pubs %}
+            {%  if loop.index0 % 3 == 0 %} <div id="pubs" class="row"> {% endif %}
+                <div class="col-md-4">
+                    <div class="tile p{{ loop.index%5 }} scrollpoint sp-effect6">
+                        <div class="media">
+                            <a  href="{{ path('pub', {'name' : pub.name}) }}">
+                                {% thumbnail pub.picture, 'small' with{'class' : 'img-rounded img-responsive'} %}
+                            </a>
+                        </div>
+                        <div class="details">
+                            <h3 class="media-heading heading" >
+                                 {{ pub.name }}
+                            </h3>
+                            <p>{{ pub.address.streetName}}{{  pub.address.streetNumber}}</p>
+                            {% include 'AppBundle:Partial:ratingstars.html.twig' %}
+                        </div>
+                    </div>
+                </div>
+     {%  if loop.index0 % 3 == 2 or loop.last %} </div> {% endif %}
+ {% endfor %}
+</div>

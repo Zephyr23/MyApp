@@ -59,6 +59,15 @@ class Address
     protected $city;
 
     /**
+     * @var string
+     * @Assert\NotBlank()
+     * @ORM\Column(type="string", name="district", length=255)
+     */
+    protected $district;
+
+
+
+    /**
      * Set streetName
      *
      * @param string $streetName
@@ -152,5 +161,35 @@ class Address
     public function getCity()
     {
         return $this->city;
+    }
+
+    public function __toString()
+    {
+        return  $this->getStreetNumber().' '.$this->getStreetName().' '.$this->getDistrict().' '.$this->getCity();
+    }
+
+
+    /**
+     * Set district
+     *
+     * @param string $district
+     *
+     * @return Address
+     */
+    public function setDistrict($district)
+    {
+        $this->district = $district;
+
+        return $this;
+    }
+
+    /**
+     * Get district
+     *
+     * @return string
+     */
+    public function getDistrict()
+    {
+        return $this->district;
     }
 }

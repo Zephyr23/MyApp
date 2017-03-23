@@ -1,105 +1,107 @@
-{% extends 'AppBundle::base.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block body %}
-    <div class="pre-loader">
-        <div class="load-con">
-            <img src="{{ asset('bundles/app/img/logo.png') }}"  class="animated fadeInDown" alt="">
-            <div class="spinner">
-                <div class="bounce1"></div>
-                <div class="bounce2"></div>
-                <div class="bounce3"></div>
-            </div>
-        </div>
-    </div>
-
+    {% include 'AppBundle:Partial:preloader.html.twig' %}
     <!-- Wrap all page content here -->
     <div id="wrap">
-
-        <!-- Fixed navbar -->
-        <div class="navbar navbar-static-top" id="nav" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <i class="fa fa-align-justify"></i>
-                    </button>
-                    <a class="navbar-brand" href={{ path('homepage') }}>
-                        <img src="{{ asset('bundles/app/img/logo.png')}}" alt="">
-                    </a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav social hidden-xs hidden-sm">
-                        <li><a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest fa-lg fa-fw"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin fa-lg fa-fw"></i></a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ path('security_login') }}">log in</a></li>
-                        <li><a href="{{ path('security_signup') }}">sign up</a></li>
-                        <li><a href="#contact">contact</a></li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!--/.container -->
-        </div>
-        <!--/.navbar -->
+        {% include 'AppBundle:Partial:navbar.html.twig' %}
         <header class="masthead">
-            <div class="slider-container" id="slider">
-                <div class="container">
-                    <div class="row mh-container">
-                        <h1><span>Perfect </span> Online Scripts</h1>
-                        <h3>New Popular Application</h3>
-                        <div class="row">
-                        <div class="col-md-12 col-centered">
-                            <div class="btn-group-justified">
-                                <div class="btn-group-lg">
-                                    <a href="{{ path('security_login') }}" class="btn btn-logIn sp-effect3 active animated fadeInRight">Log in</a>
-                                </div>
-                                <div class="btn-group-lg">
-                                    <a href="{{ path('security_signup') }}" class="btn btn-signUp sp-effect3 active animated fadeInRight">sign up</a>
-                                </div>
-                            </div>
+            <section  id="map"></section>
+        </header>
+        <div class="container-fluid info hidden-lg hidden-md">
+            <div class="col-xs-12" align="center">
+                <a class="beers">
+                    <div class="col-xs-4">
+                        <i class="fa fa-beer fa-3x">
+                        </i>
+                    </div>
+                </a>
+
+                <a class="pubs">
+                    <div class="col-xs-4">
+                        <i class="fa fa-home fa-3x">
+                        </i>
+                    </div>
+                </a>
+                <a class="reviews">
+                    <div class="col-xs-4">
+                        <i class="fa fa-comments-o fa-3x"></i>
+                    </div>
+                </a>
+                <br>
+            </div>
+        </div>
+
+        <section id="packages">
+            <div class="container">
+                <div class="about">
+                    <div class="row ">
+                        <div class="col-md-12 clearfix">
+                            <div class="section-heading scrollpoint sp-effect3">
+                                <h1> Gde na pivo</h1>
                             </div>
                         </div>
+                    </div>
+                    {% include 'AppBundle:Partial:counter.html.twig'  with {'pubs': pubs , 'numP': numP, 'numB':numB } %}
+                    <div class="row">
+                        <div class="col-md-12 clearfix">
+                            <h4>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</h4>
                         </div>
                     </div>
                 </div>
-        </header>
+                <div class="row hidden first">
+                    {% include 'AppBundle:Partial:publist.html.twig'  with {'pubs': pubs , 'numP': numP, 'numB':numB } %}
+                </div>
+                <div class="row hidden second">
+                    {% include 'AppBundle:Partial:beerlist.html.twig' with {'beers': beers} %}
+                </div>
+                <div class="row hidden third">
+                </div>
+            </div>
+        </section>
+        <section id="testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-push-1">
+                        <div id="carousel-testimonials" class="carousel slide" data-ride="carousel">
 
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="http://api.randomuser.me/portraits/women/91.jpg" alt="">
+                                    <div class="carousel-caption">
+                                        <h3>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex doloribus nobis odio facere."</h3>
+                                        <h2>Joe Doe - Gamering Studio</h2>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="http://api.randomuser.me/portraits/men/74.jpg" alt="">
+                                    <div class="carousel-caption">
+                                        <h3>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex doloribus nobis odio facere."</h3>
+                                        <h2>Joe Doe - Gamering Studio</h2>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="http://api.randomuser.me/portraits/men/14.jpg" alt="">
+                                    <div class="carousel-caption">
+                                        <h3>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex doloribus nobis odio facere."</h3>
+                                        <h2>Joe Doe - Gamering Studio</h2>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-testimonials" data-slide-to="1"></li>
+                                <li data-target="#carousel-testimonials" data-slide-to="2"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% include 'AppBundle:Partial:footer.html.twig' %}
     </div>
-{% endblock %}
-    {% block javascripts %}
-
-    <script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script>
-    <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('bundles/app/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('bundles/app/js/waypoints.min.js') }}"></script>
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
-
-    <!-- jQuery REVOLUTION Slider  -->
-    <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
-
-    <script src="{{ asset('bundles/app/js/script.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            appMaster.preLoader();
-        });
-
-        $('.btn-signUp').on('click', function () {
-
-            $('.dropdown').toggleClass('hide');
-            console.log('gsdgsagas');
-
-        })
-    </script>
-
 {% endblock %}
 

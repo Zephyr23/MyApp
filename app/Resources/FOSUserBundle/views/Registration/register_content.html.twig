@@ -1,8 +1,35 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+{% block body %}
+    <div id="wrap">
+        <header class="masthead">
+            <div class="slider-container" id="slider">
+                <div class="btn-group-lg">
+                    <a href="{{ path('homepage') }}" class="btn btn-logIn sp-effect3 active animated fadeInRight">back</a>
+                </div>
+                <div class="container">
+                    <div class="row mh-container">
+                        <h1><span>Perfect </span> Online Scripts</h1>
+                        <div class="col-md-12 col-centered">
+                            <div class="btn-group-justified">
+                                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                                {{ form_widget(form) }}
+                                <div>
+                                    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                                </div>
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
     </div>
-{{ form_end(form) }}
+
+    {#
+        If you want to control the URL the user
+        is redirected to on success (more details below)
+        <input type="hidden" name="_target_path" value="/account" />
+    #}
+
+{% endblock %}
+

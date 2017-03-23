@@ -1,15 +1,29 @@
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModal1" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">Radno vreme:
+                    </h4>
             </div>
             <div class="modal-body">
-                <section  id="map" ></section>
+                <h4>
+                    {% if pub.ohoursWeekdaysFrom is null %}
+                        <br>Pon-Pet: Zatvoreno
+                        {% else %}
+                        <br>Pon-Pet: {{ pub.ohoursWeekdaysFrom|date('H:i') }}-{{ pub.ohoursWeekdaysTo|date('H:i') }}
+                    {% endif %}
+                    {% if pub.ohoursSaturdayFrom is null %}
+                        <br>Sub: Zatvoreno
+                    {% else %}
+                        <br>Sub: {{ pub.ohoursSaturdayFrom|date('H:i') }}-{{ pub.ohoursSaturdayTo|date('H:i') }}
+                    {% endif %}
+                </h4>
+                <a class="btn" href="tel:+381652827211"><span class="fa fa-phone fa-3x"></span> +381652827211
+                </a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

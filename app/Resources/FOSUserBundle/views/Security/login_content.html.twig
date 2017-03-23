@@ -1,22 +1,95 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
+{% block body %}
+    <div id="wrap">
+        <div class="navbar navbar-static-top" id="nav" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                    <a class="navbar-brand" href={{ path('homepage') }}>
+                        <img src="{{ asset('bundles/app/img/logo.png')}}" alt="">
+                    </a>
+                </div>
 
-<form action="{{ path("fos_user_security_check") }}" method="post">
-    {% if csrf_token %}
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-    {% endif %}
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav social hidden-xs hidden-sm">
+                        <li><a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest fa-lg fa-fw"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin fa-lg fa-fw"></i></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#contact">contact</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!--/.container -->
+        </div>
+        <header class="masthead">
+        <div class="slider-container" id="slider">
+            <div class="container">
+                <div class="row mh-container">
+                    <h1><span>Perfect </span> Online Scripts</h1>
+                    <div class="col-md-12 col-centered">
+                        <div class="btn-group-justified">
 
-    <label for="username">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                            {% if error %}
+                                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
 
-    <label for="password">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" />
+                            <form action="{{ path("fos_user_security_check") }}" method="post">
+                                {% if csrf_token %}
+                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                                {% endif %}
 
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                                <label for="username">{{ 'security.login.username'|trans }}</label>
+                                <div class="form-group">
+                                <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required" />
+                                </div>
+                                <label for="password">{{ 'security.login.password'|trans }}</label>
+                                    <div class="form-group">
+                                    <input type="password" class="form-control"  id="password" name="_password" required="required" />
+                                    </div>
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                                <div class="btn-group-lg">
+                                    <button type="submit" id="_submit" name="_submit" class="btn btn-sigUp sp-effect3 active animated fadeInRight">login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+    </div>
 
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-</form>
+
+{% endblock %}
+{% block javascript %}
+    <script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script>
+    <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/waypoints.min.js') }}"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+
+    <script src="{{ asset('bundles/app/js/script.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            appMaster.preLoader();
+        });
+    </script>
+{% endblock %}
+
+
