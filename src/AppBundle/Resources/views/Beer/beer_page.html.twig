@@ -6,7 +6,13 @@
     <div id="wrap">
         {% include 'AppBundle:Partial:navbar.html.twig' %}
         <header class="masthead">
+    {% if beer.picture %}
                 {% media beer.picture, 'big' with{ 'class':'wallpaper'}%}
+    {% else %}
+        <div class="media">
+            <img class="wallpaper" src="{{ asset('bundles/app/img/default1.png') }}">
+        </div>
+    {% endif %}
                 <div class="jumbotron jumbotron-fluid info">
                     <div class="container">
                         <h1 class="display-3">{{ beer.name }}</h1>

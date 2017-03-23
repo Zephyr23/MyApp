@@ -5,7 +5,13 @@
                     <div class="tile p{{ loop.index%5 }} scrollpoint sp-effect6">
                         <div class="media">
                             <a  href="{{ path('beer', {'name' : beer.name}) }}">
+                                {% if beer.picture %}
                                 {% thumbnail beer.picture, 'small' with{'class' : 'img-rounded img-responsive'} %}
+                                {% else %}
+                                    <div class="imageSmall media">
+                                        <img class="imageSmall img-rounded img-responsive" src="{{ asset('bundles/app/img/default.png') }}">
+                                    </div>
+                                {% endif %}
                             </a>
                         </div>
                         <div class="details">
