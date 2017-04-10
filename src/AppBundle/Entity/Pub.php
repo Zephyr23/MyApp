@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Table;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity
@@ -34,17 +35,6 @@ class Pub
      * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
      **/
     protected $address;
-
-    /**
-     * Owning Side
-     *
-     * @ORM\ManyToMany(targetEntity="Beer", inversedBy="pubs", cascade={"persist"})
-     * @ORM\JoinTable(name="pub_beer",
-     *      joinColumns={@ORM\JoinColumn(name="beer_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="pub_id", referencedColumnName="id")}
-     *      )
-     */
-    protected $beers;
 
     /**
      * @var Media
@@ -102,6 +92,19 @@ class Pub
      */
     protected $ohoursSundayTo;
 
+    /**
+     * @ORM\OneToOne(targetEntity="PriceList", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="pricelist_id", referencedColumnName="id", nullable=true)
+     **/
+    protected $pricelist;
+
+
+
+    public function __toString()
+    {
+        return $this->getName();
+
+    }
     /**
      * Get id
      *
@@ -461,5 +464,29 @@ class Pub
     public function getOhoursSundayTo()
     {
         return $this->ohoursSundayTo;
+    }
+
+    /**
+     * Set pricelist
+     *
+     * @param \AppBundle\Entity\PriceList $pricelist
+     *
+     * @return Pub
+     */
+    public function setPricelist(\AppBundle\Entity\PriceList $pricelist = null)
+    {
+        $this->pricelist = $pricelist;
+
+        return $this;
+    }
+
+    /**
+     * Get pricelist
+     *
+     * @return \AppBundle\Entity\PriceList
+     */
+    public function getPricelist()
+    {
+        return $this->pricelist;
     }
 }

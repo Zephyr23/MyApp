@@ -249,7 +249,7 @@ var appMaster = {
 
                 },
                 error: function (data) {
-                    console.log(data);
+                    console.log(data.get_param);
                 }
             });
 

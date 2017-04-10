@@ -8,6 +8,7 @@ use Symfony\Component\ExpressionLanguage\Tests\Node\Obj;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use stdClass;
 class DefaultController extends Controller
 {
     /**
@@ -15,15 +16,58 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $pubs = $this->getDoctrine()->getRepository('AppBundle:Pub')->findAll();
-        $beers = $this->getDoctrine()->getRepository('AppBundle:Beer')->findAll();
 
-        $numP=count($pubs);
-        $numB=count($beers);
+        $user=null;
 
-        // replace this example code with whatever you need
+        if($this->isGranted('IS_AUTHENTICATED_FULLY')){
+
+            $user = $this->getUser();
+        }
+
+        $allPubs = $this->getDoctrine()->getRepository('AppBundle:Pub')->findAll();
+        $pubs[][] = new stdClass();
+        foreach($allPubs as $key =>$pub) {
+            $pubs[0][$key]= new stdClass();
+            $pubs[0][$key]->pub=$pub;
+            $pubs[0][$key]->price='0';
+
+        }
+        $beers[] =new stdClass();
+        $beers[0]->beer=null;
+        $beers[0]->price=null;
+        $allBeers = $this->getDoctrine()->getRepository('AppBundle:Beer')->findAll();
+
+        foreach($allBeers as $key =>$beer) {
+            $beers[$key] = new stdClass();
+            $beers[$key]->beer = $beer;
+            $allPrices = $beer->getPrice();
+
+            if ($allPrices->isEmpty()==false) {
+
+                $max = $beer->getPrice()->get(0)->getPrice();
+                $min = $beer->getPrice()->get(0)->getPrice();
+                foreach ($allPrices as $price) {
+                    $curr = $price->getPrice();
+                    if ($curr < $min) {
+                        $min = $curr;
+                    }
+                    if($curr> $max){
+                        $max=$curr;
+                    }
+                }
+                $beers[$key]->price = $min .'/' . $max;
+            }
+            else{
+                $beers[$key]->price = 'noinfo';
+            }
+        }
+
+        $numP=($pubs[0][0]->pub == null? 0 : count($pubs));
+        $numB=($beers[0]->beer == null? 0 : count($beers));
+
         return $this->render('AppBundle:default:index.html.twig', array(
-            'pubs'=> $pubs,
+            'pubslist'=> $pubs,
+            'user'=>$user,
             'beers'=> $beers,
             'numP'=> $numP,
             'numB'=> $numB,

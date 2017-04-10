@@ -20,14 +20,35 @@
                 <li><a href="#"><i class="fa fa-pinterest fa-lg fa-fw"></i></a></li>
                 <li><a href="#"><i class="fa fa-linkedin fa-lg fa-fw"></i></a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">pubs</a></li>
-                <li><a href="#">beers</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
+            {% if user %}
+                <ul class="nav social navbar-nav navbar-right">
+                    <li><a href="#"><i>pubs</i></a></li>
+                    <li><a href="#"><i>beers</i></a></li>
+                    <li><a href="#contact"><i>contact</i></a></li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown"><i>{{ user.username }}</i>
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href={{ path('logout') }}>logout</a></li>
+                                <li><a href="#">CSS</a></li>
+                            </ul>
+                        </li>
+                </ul>
+            {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i>pubs</i></a></li>
+                    <li><a href="#"><i>beers</i></a></li>
+                    <li><a href="#contact"><i>contact</i></a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#logInModal"><i>log in</i></a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#signUpModal"><i>sign up</i></a></li>
+                </ul>
+            {% endif %}
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!--/.container -->
+    {% include 'AppBundle:Modal:loginmodal.html.twig' %}
+    {% include 'AppBundle:Modal:signupmodal.html.twig' %}
 </div>
 <!--/.navbar -->

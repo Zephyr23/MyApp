@@ -5,7 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Beer;
+use stdClass;
 
 /**
  * @Route("/pubs")
@@ -28,16 +28,30 @@ class PubController extends Controller
         $em = $this->getDoctrine()->getManager();
         $gallery = $pub->getGallery();
         $media=null;
+        $beers=null;
+
         $images = $em->getRepository('ApplicationSonataMediaBundle:GalleryHasMedia')->findBy(
             array(
                 'gallery' => $gallery,
             )
         );
+
         foreach($images as $image){
             $media[] = $image->getMedia();
         }
 
-        $beers= $pub->getBeers();
+        // Get Beers from Price
+        $priceList =$pub->getPricelist();
+        $beerPrices= $priceList->getBeerprice();
+        $beers[] = new stdClass();
+        foreach($beerPrices as $key =>$beerPrice){
+            $beers[$key]= new stdClass();
+            $beers[$key]->price = $beerPrice->getPrice();
+            $b=$beerPrice->getBeer();
+            foreach($b as $beer){
+                $beers[$key]->beer = $beer;
+            }
+        }
         $numB = count($beers);
         $numI = count($media);
 

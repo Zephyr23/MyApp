@@ -618,7 +618,7 @@ section#packages .pack:hover .details .btn-social {
 }
 section#packages img {
   width: 100%;
-  height: 100%;
+  height: 90%;
   border: 2px solid white;
 }
 section#packages .car-prev {
@@ -993,19 +993,6 @@ footer .rights a {
   color: white;
 }
 
-.form-control {
-  display: inline-flex;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 3px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border: none;
-  text-align: center;
-}
-
 .btn:active, .btn.active {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1164,9 +1151,6 @@ a {
 }
 
 @media (max-width: 767px) {
-  .form-control {
-    width: 80%;
-  }
   #nav .navbar-nav li a {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1402,6 +1386,20 @@ a:hover, a:active, a:visited, a:focus{
   .wallpaper {
     height: 300px;
   }
+  .modal-dialog-fullscreen {
+    background: #222;
+    padding:10px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .modal-content-fullscreen {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0;
+  }
 }
 @media (min-width: 767px) {
   #map {
@@ -1410,6 +1408,7 @@ a:hover, a:active, a:visited, a:focus{
   .wallpaper {
     height: 500px;
   }
+
 }
 
 .info h2{
@@ -1458,3 +1457,47 @@ a:hover, a:active, a:visited, a:focus{
   width: 104px;
   height: 101px;
 }
+
+.registerfields input{
+  width: 100%;
+  height: 50px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(236, 72, 72, 0.7);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(236, 72, 72, 0.7);;
+  outline: 0 none;
+}
+
+.form-control{
+  border: none;
+  margin: 10px auto;
+}
+

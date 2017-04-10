@@ -24,12 +24,16 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+
+        <meta name="google-signin-client_id" content="846950957562-b8v9qpu65l75q3htr9d6jstu66j21ucm.apps.googleusercontent.com">
+
         <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/animate.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/owl.carousel.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/owl.theme.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap-social.css') }}">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     </head>
@@ -45,6 +49,7 @@
             <script src="{{ asset('bundles/app/js/waypoints.min.js') }}"></script>
             <script src="{{ asset('bundles/app/js/jquery.counterup.min.js') }}"></script>
             <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
             <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
             <script src="{{ asset('bundles/app/js/script.js') }}"></script>
             <!-- Latest compiled and minified JavaScript -->
@@ -164,6 +169,22 @@
                 });
 
 
+                window.fbAsyncInit = function() {
+                    FB.init({
+                        appId      : '101478166643772',
+                        xfbml      : true,
+                        version    : 'v2.8'
+                    });
+                    FB.AppEvents.logPageView();
+                };
+
+                (function(d, s, id){
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
             </script>
 
 

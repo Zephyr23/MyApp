@@ -1,12 +1,14 @@
 <div class="container">
-{% for pub in pubs %}
+{% for pubs in pubslist %}
+    {% for pub in pubs %}
+    {% if pub.pub != null %}
             {%  if loop.index0 % 3 == 0 %} <div id="pubs" class="row"> {% endif %}
                 <div class="col-md-4">
                     <div class="tile p{{ loop.index%5 }} scrollpoint sp-effect6">
                         <div class="media">
-                            <a  href="{{ path('pub', {'name' : pub.name}) }}">
-                                {% if pub.picture %}
-                                {% thumbnail pub.picture, 'small' with{'class' : 'img-rounded img-responsive'} %}
+                            <a  href="{{ path('pub', {'name' : pub.pub.name}) }}">
+                                {% if pub.pub.picture %}
+                                {% thumbnail pub.pub.picture, 'small' with{'class' : 'img-rounded img-responsive'} %}
                                 {% else %}
                                 <div class="imageSmall media">
                                     <img class="imageSmall img-rounded img-responsive" src="{{ asset('bundles/app/img/default.png') }}">
@@ -16,13 +18,18 @@
                         </div>
                         <div class="details">
                             <h3 class="media-heading heading" >
-                                 {{ pub.name }}
+                                 {{ pub.pub.name }}
                             </h3>
-                            <p>{{ pub.address.streetName}}{{  pub.address.streetNumber}}</p>
+                            {% if pub.price != 0 %}
+                            <h4>Cena: {{ pub.price }}</h4>
+                            {% endif %}
+                            <p>{{ pub.pub.address.streetName}}{{  pub.pub.address.streetNumber}}</p>
                             {% include 'AppBundle:Partial:ratingstars.html.twig' %}
                         </div>
                     </div>
                 </div>
      {%  if loop.index0 % 3 == 2 or loop.last %} </div> {% endif %}
+    {% endif %}
+    {% endfor %}
  {% endfor %}
 </div>

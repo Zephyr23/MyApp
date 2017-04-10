@@ -1,35 +1,47 @@
-{% trans_default_domain 'FOSUserBundle' %}
-{% block body %}
-    <div id="wrap">
-        <header class="masthead">
-            <div class="slider-container" id="slider">
-                <div class="btn-group-lg">
-                    <a href="{{ path('homepage') }}" class="btn btn-logIn sp-effect3 active animated fadeInRight">back</a>
-                </div>
-                <div class="container">
-                    <div class="row mh-container">
-                        <h1><span>Perfect </span> Online Scripts</h1>
-                        <div class="col-md-12 col-centered">
-                            <div class="btn-group-justified">
-                                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-                                {{ form_widget(form) }}
-                                <div>
-                                    <input type="submit" value="{{ 'registration.submit'|trans }}" />
-                                </div>
-                                {{ form_end(form) }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+
+    <div class="btn-group-justified registerfields">
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+        {{ form_errors(form) }}
+
+        <div class="col-md-12">
+            {{ form_widget(form.username , { 'attr': {'class': 'form-control', 'placeholder': 'Username', 'id': 'username'}}) }}
+        </div>
+        <div class="col-md-12">
+            {{ form_errors(form.username) }}
+        </div>
+
+
+
+        <div class="col-md-12">
+        {{ form_widget(form.email , { 'attr': {'class': 'form-control', 'placeholder': 'Email', 'id': 'email'}}) }}
+        </div>
+        <div class="col-md-12">
+        {{ form_errors(form.email) }}
+        </div>
+
+        <div class="col-md-12">
+            {{ form_widget(form.plainPassword.first , { 'attr': {'class': 'form-control', 'placeholder': 'Password', 'id': 'password'}}) }}
+        </div>
+        <div class="col-md-12">
+            {{ form_errors(form.plainPassword.first) }}
+        </div>
+
+
+        <div class="col-md-12">
+            {{ form_widget(form.plainPassword.second , { 'attr': {'class': 'form-control', 'placeholder': 'Re-Password', 'id': 're-password'}}) }}
+        </div>
+        <div class="col-md-12">
+            {{ form_errors(form.plainPassword.second) }}
+        </div>
+
+
+
+        {{ form_rest(form) }}
+
+        <div>
+            <input type="submit" value="submit" />
+        </div>
+        {{ form_end(form) }}
     </div>
-
-    {#
-        If you want to control the URL the user
-        is redirected to on success (more details below)
-        <input type="hidden" name="_target_path" value="/account" />
-    #}
-
-{% endblock %}
 

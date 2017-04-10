@@ -24,11 +24,11 @@ class PubAdmin extends Admin
             ->add('ohoursSundayTo')
             ->end()
             ->with('Address')
-            ->add('address', 'sonata_type_admin', array( 'by_reference' => false, ), array( 'edit' => 'inline', 'inline' => 'table', ) )
+            ->add('address', 'sonata_type_model')
             ->end()
-            ->with('Beer')
-            ->add('beers', 'sonata_type_model', array(
-                'multiple' => true,
+             ->with('PriceList')
+            ->add('pricelist', 'sonata_type_model', array(
+                'required' => false,
             ))
             ->end()
             ->with('Images')
@@ -44,7 +44,8 @@ class PubAdmin extends Admin
             ->add('address.streetNumber')
             ->add('address.postcode')
             ->add('address.city')
-            ->add('address.district');
+            ->add('address.district')
+            ->add('pricelist.name');
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -54,6 +55,7 @@ class PubAdmin extends Admin
             ->addIdentifier('address.streetNumber')
             ->addIdentifier('address.postcode')
             ->addIdentifier('address.city')
-            ->addIdentifier('address.district');
+            ->addIdentifier('address.district')
+            ->addIdentifier('pricelist.name');
     }
 }

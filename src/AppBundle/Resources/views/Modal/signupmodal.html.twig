@@ -1,0 +1,39 @@
+<!-- Modal -->
+<div id="signUpModal" class="modal fade" role="dialog">
+    <div class="modal-dialog-fullscreen modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content-fullscreen  modal-content col-md-12">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Log in with</h4>
+            </div>
+            <div class="modal-body col-md-12 ">
+                <div class="col-md-12 col-xs-12">
+                    <span class="divider"></span>
+                    <div class="col-md-6 col-xs-12">
+                        <a class="btn btn-block btn-social btn-facebook" href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}">
+                            <i class="fa fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <a class="btn btn-block btn-social btn-google" href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}">
+                            <i class="fa fa-google"></i> Google
+                        </a>
+                    </div>
+                    <span class="divider"></span>
+                </div>
+
+                <span>or</span>
+                <div class="col-md-12">
+                    {{ render(controller('FOSUserBundle:Registration:register')) }}
+                </div>
+            </div>
+            <div class="modal-footer col-md-12">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

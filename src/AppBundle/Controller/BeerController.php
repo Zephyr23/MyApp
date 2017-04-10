@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Beer;
+use stdClass;
 
 /**
  * @Route("/beer")
@@ -25,14 +26,30 @@ class BeerController extends Controller
             'name'=>$name
         ]);
 
-        $pubs= $beer->getPubs();
+        // Get Pubs from PriceLists
+        $prices =$beer->getPrice(); //getPrices!
+
+        $pubs[][] = new stdClass();
+
+        foreach($prices as $key =>$price){
+            $priceList=$price->getPricelist();
+           // var_dump($priceList);die;
+            foreach($priceList as $k => $p){
+                $pubs[$key][$k]= new stdClass();
+                $pub = $this->getDoctrine()->getRepository('AppBundle:Pub')->findOneBy([
+                    'pricelist'=>$p
+                ]);
+                $pubs[$key][$k]->price = $price->getPrice();
+                $pubs[$key][$k]->pub= $pub;
+            }
+        }
 
 
 
         // replace this example code with whatever you need
         return $this->render('AppBundle:Beer:beer_page.html.twig', array(
             'beer'=>$beer,
-            'pubs'=>$pubs
+            'pubslist'=>$pubs
         ));
     }
 }

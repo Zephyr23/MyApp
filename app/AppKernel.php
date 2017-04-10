@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
 
             new Bazinga\Bundle\GeocoderBundle\BazingaGeocoderBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
 
             new Sonata\IntlBundle\SonataIntlBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
