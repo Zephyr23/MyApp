@@ -2,7 +2,7 @@
 {% for pubs in pubslist %}
     {% for pub in pubs %}
     {% if pub.pub != null %}
-            {%  if loop.index0 % 3 == 0 %} <div id="pubs" class="row"> {% endif %}
+            {%  if loop.index0 % 6 == 0 %} <div id="pubs" class="row"> {% endif %}
                 <div class="col-md-4">
                     <div class="tile p{{ loop.index%5 }} scrollpoint sp-effect6">
                         <div class="media">
@@ -28,8 +28,12 @@
                         </div>
                     </div>
                 </div>
-     {%  if loop.index0 % 3 == 2 or loop.last %} </div> {% endif %}
+     {%  if loop.index0 % 6 == 5 or loop.last %} </div> {% endif %}
     {% endif %}
     {% endfor %}
  {% endfor %}
+    <ul class="pager">
+        <li><a href="#pubs" id="">Previous</a></li>
+        <li><a href="#pubs" id="">Next</a></li>
+    </ul>
 </div>

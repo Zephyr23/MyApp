@@ -34,6 +34,7 @@
         <link rel="stylesheet" href="{{ asset('bundles/app/css/owl.theme.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap-social.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/swiper.min.css') }}">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     </head>
@@ -42,10 +43,9 @@
         {% endblock %}
         {% block javascripts %}
 
-
             <script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script>
             <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
-            <script src="{{ asset('bundles/app/js/owl.carousel.min.js') }}"></script>
+          <!--  <script src="{{ asset('bundles/app/js/owl.carousel.min.js') }}"></script>-->
             <script src="{{ asset('bundles/app/js/waypoints.min.js') }}"></script>
             <script src="{{ asset('bundles/app/js/jquery.counterup.min.js') }}"></script>
             <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
@@ -55,15 +55,35 @@
             <!-- Latest compiled and minified JavaScript -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 
+            <!-- carousel -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.carousel.min.css">
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.theme.default.min.css">
+
             <!-- jQuery REVOLUTION Slider  -->
             <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
             <script type="text/javascript" src="{{ asset('bundles/app/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
             <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPjWQfwUf6AEAOuCjMESsg0YAiFTcqBFY&libraries=geometry"></script>
 
+            <!-- swipe -->
+            <script type="text/javascript" src="{{ asset('bundles/app/js/jquery.touchSwipe.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/app/js/swiper.jquery.min.js') }}"></script>
+
             <script>
                 $(document).ready(function() {
                     appMaster.preLoader();
                 });
+
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    slidesPerView: 1,
+                    paginationClickable: true,
+                    spaceBetween: 30,
+                    loop: true
+                });
+
 
                 $('.btn-signUp').on('click', function () {
 
@@ -72,7 +92,6 @@
                 })
 
                 $('.fa-chevron-down').on('click', function () {
-                    console.log('fdsfgsdagasd');
                     $('.dropdown').removeClass('hidden');
                     $(this).addClass('hidden');
                 })
@@ -89,6 +108,7 @@
 
                 })
 
+
                 $('.pubs').on('click', function () {
 
                     if( $('.second').hasClass('visible')){
@@ -96,6 +116,8 @@
                         $('.second').toggleClass('visible');
                         $('.about').toggleClass('hidden-xs');
                         $('.about').toggleClass('hidden-sm');
+                        $('.about-text').toggleClass('hidden');
+                        $('.about-text').toggleClass('visible');
 
                     }
                     if( $('.third').hasClass('visible')){
@@ -103,6 +125,8 @@
                         $('.third').toggleClass('visible');
                         $('.about').toggleClass('hidden-xs');
                         $('.about').toggleClass('hidden-sm');
+                        $('.about-text').toggleClass('hidden');
+                        $('.about-text').toggleClass('visible');
 
                     }
 
@@ -110,6 +134,8 @@
                     $('.first').toggleClass('visible');
                     $('.about').toggleClass('hidden-xs');
                     $('.about').toggleClass('hidden-sm');
+                    $('.about-text').toggleClass('hidden');
+                    $('.about-text').toggleClass('visible');
 
 
 
@@ -122,6 +148,8 @@
                         $('.first').toggleClass('visible');
                         $('.about').toggleClass('hidden-xs');
                         $('.about').toggleClass('hidden-sm');
+                        $('.about-text').toggleClass('hidden');
+                        $('.about-text').toggleClass('visible');
 
                     }
                     if( $('.third').hasClass('visible')){
@@ -129,12 +157,16 @@
                         $('.third').toggleClass('visible');
                         $('.about').toggleClass('hidden-xs');
                         $('.about').toggleClass('hidden-sm');
+                        $('.about-text').toggleClass('hidden');
+                        $('.about-text').toggleClass('visible');
 
                     }
                     $('.second').toggleClass('hidden');
                     $('.second').toggleClass('visible');
                     $('.about').toggleClass('hidden-xs');
                     $('.about').toggleClass('hidden-sm');
+                    $('.about-text').toggleClass('hidden');
+                    $('.about-text').toggleClass('visible');
 
                 })
                 $('.reviews').on('click', function () {
@@ -144,6 +176,8 @@
                         $('.first').toggleClass('visible');
                         $('.about').toggleClass('hidden-xs');
                         $('.about').toggleClass('hidden-sm');
+                        $('.about-text').toggleClass('hidden');
+                        $('.about-text').toggleClass('visible');
 
                     }
                     if( $('.second').hasClass('visible')){
@@ -151,14 +185,67 @@
                         $('.second').toggleClass('visible');
                         $('.about').toggleClass('hidden-xs');
                         $('.about').toggleClass('hidden-sm');
+                        $('.about-text').toggleClass('hidden');
+                        $('.about-text').toggleClass('visible');
 
                     }
                     $('.third').toggleClass('hidden');
                     $('.third').toggleClass('visible');
                     $('.about').toggleClass('hidden-xs');
                     $('.about').toggleClass('hidden-sm');
+                    $('.about-text').toggleClass('hidden');
+                    $('.about-text').toggleClass('visible');
 
                 })
+
+
+
+                $(".beer-item").swipe( {
+
+                    allowPageScroll:"auto",
+                    threshold:75,
+                    //Generic swipe handler for all directions
+                    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+                        if(direction=="left" && $(this).next().length) {
+                            $(this).removeClass('visible');
+                            $(this).addClass('hidden');
+                            $(this).next().removeClass('hidden');
+                           // $(this).next().addClass('visible');
+                            $(this).next().toggleClass('animated fadeInRight');
+                        }
+                        else if(direction=="right" && $(this).prev().length) {
+                            $(this).removeClass('visible');
+                            $(this).addClass('hidden');
+                            $(this).prev().removeClass('hidden');
+                            //$(this).prev().addClass('visible');
+                            $(this).prev().toggleClass('animated fadeInLeft');
+                        }
+                    }
+
+                })
+
+                $('.beer-navigation').find('.prev').on('click', function () {
+                    var elem =  $(".carousel-inner").find('.visible');
+                    if(elem.prev().length && elem.hasClass('visible')){
+                        elem.removeClass('visible');
+                        elem.addClass('hidden');
+                        elem.prev().removeClass('hidden');
+                        elem.prev().addClass('visible');
+                        elem.prev().toggleClass('animated fadeInRight');
+                    }
+                })
+
+                $('.beer-navigation').find('.next').on('click', function () {
+                    var elem =  $(".carousel-inner").find('.visible');
+                    if(elem.next().length){
+                        elem.removeClass('visible');
+                        elem.addClass('hidden');
+                        elem.next().removeClass('hidden');
+                        elem.next().addClass('visible');
+                        elem.next().toggleClass('animated fadeInLeft');
+                    }
+                })
+
 
                 // Counter
                 jQuery(document).ready(function($) {

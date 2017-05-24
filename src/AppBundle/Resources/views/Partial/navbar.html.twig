@@ -20,17 +20,20 @@
                 <li><a href="#"><i class="fa fa-pinterest fa-lg fa-fw"></i></a></li>
                 <li><a href="#"><i class="fa fa-linkedin fa-lg fa-fw"></i></a></li>
             </ul>
-            {% if user %}
-                <ul class="nav social navbar-nav navbar-right">
+            {% if app.user %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="visible-xs"><a href="{{ path('user', {'username' : user.username}) }}"><i>{{ user.username }}</i></a><hr></li>
                     <li><a href="#"><i>pubs</i></a></li>
                     <li><a href="#"><i>beers</i></a></li>
-                    <li><a href="#contact"><i>contact</i></a></li>
-                        <li class="dropdown">
+                    <li><a href="#contact"><i>contact</i></a><hr></li>
+                    <li class="visible-xs"><a href={{ path('logout') }}>logout</a></li>
+                        <li class="dropdown hidden-xs">
                             <a data-toggle="dropdown"><i>{{ user.username }}</i>
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
+                                <li><a href="{{ path('user', {'username' : user.username}) }}">Profile</a></li>
                                 <li><a href={{ path('logout') }}>logout</a></li>
-                                <li><a href="#">CSS</a></li>
+
                             </ul>
                         </li>
                 </ul>

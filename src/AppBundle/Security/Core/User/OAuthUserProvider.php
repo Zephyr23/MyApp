@@ -30,9 +30,16 @@ class OAuthUserProvider extends BaseClass
                 //if the user does not have a normal account, set it up:
                 $user = $this->userManager->createUser();
                 $user->setUsername($userName);
-                $user->setEmail($email);
+                if($email==null) {
+                    $user->setEmail('info@info.com');
+                    $user->setEmailCanonical('info@info.com');
+                }
+                else{
+                    $user->setEmail($email);
+                    $user->setEmailCanonical($email);
+                }
+
                 $user->setUsernameCanonical("test");
-                $user->setEmailCanonical($email);
                 $user->setPlainPassword(md5(uniqid()));
                 $user->setEnabled(true);
             }

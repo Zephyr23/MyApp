@@ -73,7 +73,7 @@ var appMaster = {
         var owl = $("#owl-screenshots");
 
         owl.owlCarousel({
-            pagination:false
+            pagination:true
         });
 
         $(".owl-next").click(function() {
@@ -83,6 +83,7 @@ var appMaster = {
         $(".owl-prev").click(function(){
             owl.trigger('owl.prev');
         });
+
     },
 
     maps: function(){

@@ -62,7 +62,7 @@ class DefaultController extends Controller
             }
         }
 
-        $numP=($pubs[0][0]->pub == null? 0 : count($pubs));
+        $numP=($pubs[0][0]->pub == null? 0 : count($pubs[0]));
         $numB=($beers[0]->beer == null? 0 : count($beers));
 
         return $this->render('AppBundle:default:index.html.twig', array(

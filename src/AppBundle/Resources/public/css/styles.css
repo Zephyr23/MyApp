@@ -81,7 +81,7 @@ header.masthead .mh-slider {
 }
 #slider .container #carousel-slider .carousel-control {
   background-image: none;
-  padding-top: 45%;
+  width: inherit;
 }
 #slider .container #carousel-slider .carousel-control .slider-left, #slider .container #carousel-slider .carousel-control .slider-right {
   background: url(../img/slider.png) no-repeat;
@@ -306,7 +306,6 @@ section#features .carousel-indicators li.active {
   border-color: white;
 }
 section#download {
-  background-image: url(../img/download_bk.jpg);
   color: white;
   position: relative;
 }
@@ -317,7 +316,6 @@ section#download:after {
   bottom: 0;
   right: 0;
   left: 0;
-  background: url(../img/pattern.png) repeat;
 }
 section#download .container {
   position: relative;
@@ -1161,8 +1159,8 @@ a {
   text-align:center;
 }
 .col-centered{
-  margin-top: 25px;
-  margin-bottom: 25px;
+  float: none;
+  margin: auto;
 }
 .btn-social ul {
   display: inline-flex;
@@ -1387,7 +1385,7 @@ a:hover, a:active, a:visited, a:focus{
     height: 300px;
   }
   .modal-dialog-fullscreen {
-    background: #222;
+    opacity: 0.9;
     padding:10px;
     width: 100%;
     height: 100%;
@@ -1396,11 +1394,31 @@ a:hover, a:active, a:visited, a:focus{
   }
 
   .modal-content-fullscreen {
+    background: #222;
     height: auto;
     min-height: 100%;
     border-radius: 0;
   }
 }
+
+.modal-dialog-fullscreen {
+  opacity: 0.9;
+
+}
+
+.modal-content-fullscreen {
+  background: #222;
+  color:white;
+  text-align: center;
+  font-size: 18px;
+}
+.close{
+  margin-top: -5px !important;
+  font-size: 35px;
+  color:whitesmoke;
+  opacity:0.9;
+}
+
 @media (min-width: 767px) {
   #map {
     height: 500px;
@@ -1492,12 +1510,48 @@ input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {
   border-color: rgba(236, 72, 72, 0.7);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(236, 72, 72, 0.7);;
+  border-width: 3px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(236, 72, 72, 0.7);;
   outline: 0 none;
 }
 
 .form-control{
   border: none;
   margin: 10px auto;
+}
+
+.dropdown-menu{
+  background: #222 ;
+  width:100%;
+  min-width: 100%;
+
+}
+.dropdown-menu>li>a{
+  padding: 10px !important;
+  border:none;
+}
+
+.dropdown-menu>li>a:hover{
+  color: white !important;
+}
+
+hr{
+  margin: 0 35px 0 15px;
+  border-color: grey;
+}
+
+.slider-container{
+  min-height: 400px !important;
+  height: 100% !important;
+}
+.beer-item{
+  transition-duration: 3s;
+}
+.beer-navigation{
+  margin-top: 20px;
+  text-align: center;
+}
+.beer-navigation>a{
+  color: rgba(236, 72, 72, 0.7);
 }
 

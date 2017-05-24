@@ -22,6 +22,13 @@ class BeerController extends Controller
      */
     public function beerAction(Request $request, $name)
     {
+        $user=null;
+
+        if($this->isGranted('IS_AUTHENTICATED_FULLY')){
+
+            $user = $this->getUser();
+        }
+
         $beer = $this->getDoctrine()->getRepository('AppBundle:Beer')->findOneBy([
             'name'=>$name
         ]);
@@ -49,6 +56,7 @@ class BeerController extends Controller
         // replace this example code with whatever you need
         return $this->render('AppBundle:Beer:beer_page.html.twig', array(
             'beer'=>$beer,
+            'user'=>$user,
             'pubslist'=>$pubs
         ));
     }

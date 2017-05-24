@@ -25,6 +25,13 @@ class PubController extends Controller
             'name'=>$name
         ]);
 
+        $user=null;
+
+        if($this->isGranted('IS_AUTHENTICATED_FULLY')){
+
+            $user = $this->getUser();
+        }
+
         $em = $this->getDoctrine()->getManager();
         $gallery = $pub->getGallery();
         $media=null;
@@ -42,14 +49,19 @@ class PubController extends Controller
 
         // Get Beers from Price
         $priceList =$pub->getPricelist();
-        $beerPrices= $priceList->getBeerprice();
-        $beers[] = new stdClass();
-        foreach($beerPrices as $key =>$beerPrice){
-            $beers[$key]= new stdClass();
-            $beers[$key]->price = $beerPrice->getPrice();
-            $b=$beerPrice->getBeer();
-            foreach($b as $beer){
-                $beers[$key]->beer = $beer;
+        if($priceList == null){
+            $beers = null;
+        }
+        else {
+            $beerPrices = $priceList->getBeerprice();
+            $beers[] = new stdClass();
+            foreach ($beerPrices as $key => $beerPrice) {
+                $beers[$key] = new stdClass();
+                $beers[$key]->price = $beerPrice->getPrice();
+                $b = $beerPrice->getBeer();
+                foreach ($b as $beer) {
+                    $beers[$key]->beer = $beer;
+                }
             }
         }
         $numB = count($beers);
@@ -62,6 +74,7 @@ class PubController extends Controller
             'images'=>$media,
             'numB'=>$numB,
             'numI'=>$numI,
+            'user'=>$user
         ));
     }
 }

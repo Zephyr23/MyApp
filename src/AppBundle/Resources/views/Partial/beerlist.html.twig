@@ -1,36 +1,53 @@
-<div class="container">
-{% for beer in beers %}
-    {% if beer.beer != null %}
-        {%  if loop.index0 % 3 == 0 %} <div id="beers" class="row"> {% endif %}
-                <div class="col-md-4">
-                    <div class="tile p{{ loop.index%5 }} scrollpoint sp-effect6">
-                        <div class="imageSmall media">
-                            <a  href="{{ path('beer', {'name' : beer.beer.name}) }}">
-                                {% if beer.beer.picture %}
-                                {% thumbnail beer.beer.picture, 'small' with{'class' : 'img-rounded img-responsive'} %}
-                                {% else %}
+<div class="slider-container">
+    <div class="container mh-slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for beer in beers %}
+                {% if beer.beer != null %}
+                {% if loop.index0%3 == 0 %}
+                {% if loop.index0 == 0 %}
+                <div class="swiper-slide">
+                    {% else %}
+                    <div class="swiper-slide">
+                        {% endif %}
+                        {% endif %}
+                        <a href="{{ path('beer', {'name' : beer.beer.name}) }}">
+                            <div class="col-md-4">
+                                <div class="tile p{{ loop.index%5 }}">
                                     <div class="imageSmall media">
-                                        <img class="imageSmall img-rounded img-responsive" src="{{ asset('bundles/app/img/default.png') }}">
+                                        {% if beer.beer.picture %}
+                                            {% thumbnail beer.beer.picture, 'small' with{'class' : 'img-rounded img-responsive'} %}
+                                        {% else %}
+                                            <div class="imageSmall media">
+                                                <img class="imageSmall img-rounded img-responsive"
+                                                     src="{{ asset('bundles/app/img/default.png') }}">
+                                            </div>
+                                        {% endif %}
+
                                     </div>
-                                {% endif %}
-                            </a>
-                            <div
-                                    class="fb-like"
-                                    data-share="true"
-                                    data-width="450"
-                                    data-show-faces="true">
+                                    <div class="details">
+                                        <h3 class="media-heading heading">
+                                            {{ beer.beer.name }}
+                                        </h3>
+                                        <label>Price : {{ beer.price }} din</label>
+                                        {% include 'AppBundle:Partial:ratingstars.html.twig' %}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="details">
-                            <h3 class="media-heading heading" >
-                                {{ beer.beer.name }}
-                            </h3>
-                            <h4>Cena : {{ beer.price }} </h4>
-                            {% include 'AppBundle:Partial:ratingstars.html.twig' %}
-                        </div>
-                    </div>
-                </div>
-    {%  if loop.index0 % 3 == 2 or loop.last%} </div> {% endif %}
-    {% endif %}
-{% endfor %}
+                        </a>
+                        {% endif %}
+                        {% if loop.index0%3 == 2 or loop.last %}</div>{% endif %}
+                    {% endfor %}</div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+               <!-- <div class="col-xs-12 beer-navigation hidden-xs">
+                <a href="#pubs" class="fa fa-chevron-left fa-3x prev" role="button"></a>
+                <a href="#pubs" class="fa fa-chevron-right fa-3x next" role="button"></a>
+                </div>-->
+            </div>
+        </div>
+    </div>
 </div>
