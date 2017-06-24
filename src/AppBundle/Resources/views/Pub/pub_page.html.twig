@@ -6,53 +6,47 @@
     <div id="wrap">
         {% include 'AppBundle:Partial:navbar.html.twig' %}
         <header class="masthead">
-        {% if pub.picture %}
-        {% media pub.picture, 'big' with {'class': 'wallpaper'}%}
-        {% else %}
-            <div class="media">
-                <img class="wallpaper" src="{{ asset('bundles/app/img/default1.png') }}">
-            </div>
-        {% endif %}
-        <div class="profileImg hidden-xs">
-            {% include 'AppBundle:Partial:ppcounter.html.twig'  with {'pub':pub,'pubs': 10 , 'numI': numI, 'numB':numB } %}
-        </div>
-        <div class="jumbotron jumbotron-fluid info">
-            <div class="container">
-                <div class="col-md-5 pubHeading">
-                    <h2>{{ pub.name }} <i data-toggle="modal" data-target="#myModal1" class="fa fa-clock-o"></i> </h2>
-                    <h4>{{ pub.address.streetName}} {{  pub.address.streetNumber}}
-                        <i data-toggle="modal" data-target="#myModal" class="fa fa-map-marker fa-lg"></i>
-                    </h4>
+            <div class="header">
+            <div class="swiper-container-image">
+            <div class="feature-product pub">
+                <div class="container">
+                    <div class="headlines">
+                        <h1 class="multiline-headline multiline-headline-02 white-color">
+                            {{ pub.name }}<i data-toggle="modal" data-target="#myModal1" class="fa fa-clock-o"></i> </h1>
+                            <h3>{{ pub.address.streetName}} {{  pub.address.streetNumber}}
+                                <i data-toggle="modal" data-target="#myModal" class="fa fa-map-marker fa-lg"></i>
+                            </h3>
+                    </div>
+                    <div class="feature-product-image" id="featureBrandProductImage">
+                        <a class="beer-product-image" data-track-product-impression="impression" data-track-impression-list="Category hero slots" data-track-product-category="TORP" data-track-product-name="Heineken TORP" data-track-product-id="heineken torp" data-track-product-position="1" data-track-product-price="7.49" data-track-product-brand="Heineken" href="/heineken-torp.html">
+                            <img src="http://www.novagod.com/images/prezentacije/1439883365-klub_tramvaj_pub.jpg" title="Heineken TORP" alt="Heineken TORP">
+                        </a>
+                    </div>
+                    <div class="feature-product-info" id="featureProductInfo" data-track-product-impression="impression" data-track-impression-list="Category hero slots" data-track-product-category="TORP" data-track-product-name="Heineken TORP" data-track-product-id="heineken torp" data-track-product-position="1" data-track-product-price="7.49" data-track-product-brand="Heineken">
+                        {% include 'AppBundle:Partial:ppcounter.html.twig'  with {'pub':pub,'pubs': 10 , 'numI': numI, 'numB':numB } %}
+                        <div class="description">
+                            <p>Born in Amsterdam, Raised by the World</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="col-xs-12 hidden-lg hidden-md" align="center">
-                    <span class="divider"></span>
-                    <a class="beers">
-                        <div class="col-xs-4">
-                            <i class="fa fa-beer fa-3x">
-                            </i>
-                        </div>
-                    </a>
 
-                    <a class="pubs">
-                        <div class="col-xs-4">
-                            <i class="fa fa-picture-o fa-3x">
-                            </i>
+                <div class="swiper-wrapper swiper-image">
+                    {% for image in images %}
+                        <div class="swiper-slide">
+                            {% media image, 'big' with{ 'class':'wall'}  %}
                         </div>
-                    </a>
-                    <a class="reviews">
-                        <div class="col-xs-4">
-                            <i class="fa fa-comments-o fa-3x"></i>
-                        </div>
-                    </a>
-                    <br>
+                    {% endfor %}
                 </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-        </div>
             {% include 'AppBundle:Modal:hoursmodal.html.twig' with{'pub': pub} %}
             {% include 'AppBundle:Modal:mapmodal.html.twig' %}
             {% include 'AppBundle:Partial:pubnav.html.twig' %}
+                {% include 'AppBundle:Partial:mobileNav.html.twig' %}
+            </div>
         <section id="packages">
             <div class="container">
                 <div class="about">
@@ -66,120 +60,13 @@
                 {% include 'AppBundle:Partial:pubGallery.html.twig'  with {'images': images} %}
             </div>
             <div class="row hidden second">
-                {% include 'AppBundle:Partial:beerlist.html.twig' with {'beers': beers} %}
+                {% include 'AppBundle:Search:search_list.html.twig' with {'items': beers, 'searchItem': 'beers', 'user': user} %}
+
             </div>
             <div class="row hidden third">
-                <section id="features" style="background-color: gray ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 col-md-push-2 clearfix">
-                                <div class="section-heading scrollpoint sp-effect3">
-                                    <h3>reviews</h3>
-                                    <span class="divider"></span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore reiciendis vel reprehenderit expedit!</p>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <div class="row">
-                                                <div class="col-md-3 col-sm-6">
-                                                    <div class="feature scrollpoint sp-effect2">
-                                                        <div class="icon">
-                                                            <i class="fa fa-weixin fa-4x"></i>
-                                                        </div>
-                                                        <h4>Document File</h4>
-                                                        <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 col-sm-6">
-                                                    <div class="feature scrollpoint sp-effect2">
-                                                        <div class="icon">
-                                                            <i class="fa fa-weixin fa-4x"></i>
-                                                        </div>
-                                                        <h4>Document File</h4>
-                                                        <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 col-sm-6">
-                                                    <div class="feature scrollpoint sp-effect2">
-                                                        <div class="icon">
-                                                            <i class="fa fa-weixin fa-4x"></i>
-                                                        </div>
-                                                        <h4>Document File</h4>
-                                                        <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 col-sm-6">
-                                                    <div class="feature scrollpoint sp-effect2">
-                                                        <div class="icon">
-                                                            <i class="fa fa-weixin fa-4x"></i>
-                                                        </div>
-                                                        <h4>Document File</h4>
-                                                        <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="row">
-                                                <div class="col-md-3 col-sm-6">
-                                                    <div class="feature scrollpoint sp-effect2">
-                                                        <div class="icon">
-                                                            <i class="fa fa-weixin fa-4x"></i>
-                                                        </div>
-                                                        <h4>Document File</h4>
-                                                        <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 col-sm-6">
-                                                    <div class="feature scrollpoint sp-effect2">
-                                                        <div class="icon">
-                                                            <i class="fa fa-weixin fa-4x"></i>
-                                                        </div>
-                                                        <h4>Document File</h4>
-                                                        <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 col-sm-6">
-                                                    <div class="feature scrollpoint sp-effect2">
-                                                        <div class="icon">
-                                                            <i class="fa fa-weixin fa-4x"></i>
-                                                        </div>
-                                                        <h4>Document File</h4>
-                                                        <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 col-sm-6">
-                                                    <div class="feature scrollpoint sp-effect2">
-                                                        <div class="icon">
-                                                            <i class="fa fa-weixin fa-4x"></i>
-                                                        </div>
-                                                        <h4>Document File</h4>
-                                                        <p>Reiciendis vero repudiandae at magnam aliquam consequatur vel.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Indicators -->
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                    </ol>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
-                </div>
+            </div>
         </section>
-
-
     </header>
     {% include 'AppBundle:Partial:footer.html.twig' %}
     </div>

@@ -52,8 +52,6 @@ class BeerController extends Controller
         }
 
 
-
-        // replace this example code with whatever you need
         return $this->render('AppBundle:Beer:beer_page.html.twig', array(
             'beer'=>$beer,
             'user'=>$user,

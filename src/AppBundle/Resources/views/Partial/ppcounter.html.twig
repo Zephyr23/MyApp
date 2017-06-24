@@ -1,32 +1,37 @@
 <div class="row visible-md visible-lg">
     <div class="main_counter_area">
         <div class="overlay p-y-3">
-            <div class="container">
-                <div class="row">
                     <div class="col-md-12 main_counter_content_p text-center white-text wow fadeInUp scrollpoint sp-effect6">
-                        <div class="col-md-6 col-md-offset-6" align="center">
-                            <a class="reviews">
-                            <div class="pull-right single_counter p-y-2 m-t-1 col-md-2">
-                                <h2 class="statistic-counter">{{ numB }}</h2>
-                                <p>Reviews</p>
-                            </div>
-                            </a>
-                            <a class="pubs">
-                            <div class="pull-right single_counter p-y-2 m-t-1 col-md-2">
-                                <h2 class="statistic-counter">{{ numI }}</h2>
-                                <p>Images</p>
-                            </div>
-                            </a>
+                        <div class="counter" align="center">
                             <a class="beers">
-                            <div class="pull-right single_counter p-y-2 m-t-1 col-md-2">
-                                <h2 class="statistic-counter">{{ numB }}</h2>
-                                <p>Beers</p>
+                                <div class="single_counter">
+                                    <i class="fa fa-beer fa-3x"></i>
+                                    <div class="counter-info">
+                                        <p>{{ numB }}</p>
+                                        <p>Beers</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="images">
+                            <div class="single_counter">
+                                <i class="fa fa-image fa-3x"></i>
+                                <div class="counter-info">
+                                <p>{{ numI }}</p>
+                                <p>Images</p>
+                                </div>
                             </div>
+                            </a>
+                            <a class="reviews">
+                                <div class="single_counter">
+                                    <i class="fa fa-comments-o fa-3x"></i>
+                                    <div class="counter-info">
+                                    <p>{{ numB }}</p>
+                                    <p>Reviews</p>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

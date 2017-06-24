@@ -8,32 +8,9 @@
         <header class="masthead">
             <section  id="map"></section>
         </header>
-        <div class="container-fluid info hidden-lg hidden-md">
-            <div class="col-xs-12" align="center">
-                <a class="beers">
-                    <div class="col-xs-4">
-                        <i class="fa fa-beer fa-3x">
-                        </i>
-                    </div>
-                </a>
-
-                <a class="pubs">
-                    <div class="col-xs-4">
-                        <i class="fa fa-home fa-3x">
-                        </i>
-                    </div>
-                </a>
-                <a class="reviews">
-                    <div class="col-xs-4">
-                        <i class="fa fa-comments-o fa-3x"></i>
-                    </div>
-                </a>
-                <br>
-            </div>
-        </div>
-
+        {% include 'AppBundle:Partial:mobileNav.html.twig' %}
         <section id="packages">
-            <div class="container">
+            <div id="packages" class="container">
                 <div class="about">
                     <div class="row ">
                         <div class="col-md-12 clearfix">
@@ -55,7 +32,7 @@
                 <div class="row hidden second">
                     {% include 'AppBundle:Partial:beerlist.html.twig' with {'beers': beers} %}
                 </div>
-                <div class="row hidden third">
+                <div class="row hidden third"><a >Full article</a>
                 </div>
             </div>
         </section>

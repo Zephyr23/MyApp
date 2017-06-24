@@ -190,10 +190,6 @@ var appMaster = {
             var map = new google.maps.Map(mapElement, mapOptions);
             var infoWindow = new google.maps.InfoWindow({map: map});
             var infowindow = new google.maps.InfoWindow();
-            // Get the HTML DOM element that will contain your map
-            // We are using a div with id="map" seen below in the <body>
-
-            // Create the Google Map using out element and options defined above
 
             var currentPos;
             // Try HTML5 geolocation.
@@ -237,8 +233,8 @@ var appMaster = {
                             objects.push({
                                 name: val.name,
                                 address: val.address,
-                                lat: val.latitude,
-                                lng: val.longitude
+                                lat: parseFloat(val.latitude),
+                                lng: parseFloat(val.longitude)
                             });
 
                         }
@@ -302,5 +298,4 @@ $(document).ready(function() {
     appMaster.headerSlider();
     appMaster.owlCarousel();
     appMaster.maps();
-
 });

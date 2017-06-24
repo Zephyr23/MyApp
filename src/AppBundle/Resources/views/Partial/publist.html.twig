@@ -1,14 +1,15 @@
-<div class="container">
-{% for pubs in pubslist %}
+<a href="{{ path('search', {'searchItem' : 'pubs'}) }}">Search All</a>
+<div class="swiper-container-pubs swiper-container-horizontal">
+    <div class="swiper-wrapper">
+    {% for pubs in pubslist %}
     {% for pub in pubs %}
     {% if pub.pub != null %}
-            {%  if loop.index0 % 6 == 0 %} <div id="pubs" class="row"> {% endif %}
-                <div class="col-md-4">
-                    <div class="tile p{{ loop.index%5 }} scrollpoint sp-effect6">
+        <div class="swiper-slide">
+                    <div class="tile b{{ loop.index%5 }} scrollpoint sp-effect6">
                         <div class="media">
                             <a  href="{{ path('pub', {'name' : pub.pub.name}) }}">
                                 {% if pub.pub.picture %}
-                                {% thumbnail pub.pub.picture, 'small' with{'class' : 'img-rounded img-responsive'} %}
+                                {% thumbnail pub.pub.picture, 'small' with{'class' : 'img-square img-rounded img-responsive'} %}
                                 {% else %}
                                 <div class="imageSmall media">
                                     <img class="imageSmall img-rounded img-responsive" src="{{ asset('bundles/app/img/default.png') }}">
@@ -27,13 +28,12 @@
                             {% include 'AppBundle:Partial:ratingstars.html.twig' %}
                         </div>
                     </div>
-                </div>
-     {%  if loop.index0 % 6 == 5 or loop.last %} </div> {% endif %}
+        </div>
     {% endif %}
     {% endfor %}
- {% endfor %}
-    <ul class="pager">
-        <li><a href="#pubs" id="">Previous</a></li>
-        <li><a href="#pubs" id="">Next</a></li>
-    </ul>
+    {% endfor %}
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 </div>

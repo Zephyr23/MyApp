@@ -1,0 +1,77 @@
+<header class="masthead">
+    <div class="col-xs-12 row-centered search-form">
+        <p><input class="btn-search" type="text" id="quicksearch" placeholder="Search" /></p>
+        <div class="col-xs-12">
+            <h3>Filter by:</h3>
+            <div id="filters" class="button-group">
+                <button id="show-all" class="btn-search option is-checked" data-filter="*">show all</button>
+                {% if searchItem == 'beers' %}
+                    <button class="btn-search option" data-filter=".Lager">lager</button>
+                {% elseif searchItem == 'pubs' %}
+                    <button class="btn-search option" data-filter=".name">name</button>
+                {% endif %}
+                <button class="btn-search option" data-filter=":not(.Lager)">not lager</button>
+            </div>
+            <h3>Sort by:</h3>
+            <div id="sorts" class="button-group">  <button class="btn-search button is-checked" data-sort-by="original-order">original order</button>
+                <button class="btn-search button" data-sort-by="name">name</button>
+            </div>
+        </div>
+    </div>
+</header>
+<section id="packages">
+    <div class="container">
+        <div class="col-xs-12 row-centered">
+            <div id="search-list">
+                <div class="grid">
+                    {% for item in items %}
+                        {% if searchItem == 'beers' %}
+                            {% if item.beer != null %}
+                                <a href="{{ path('beer', {'name' : item.beer.name}) }}">
+                                    <div class="col-md-6 col-xs-12 element-item {{ item.beer.style }} " data-category="{{ item.beer.style }}">
+                                        <div class="col-xs-12 b{{ loop.index%5 }}">
+                                            <div class="media col-md-4 col-xs-5">
+                                                {% if item.beer.picture %}
+                                                    {% thumbnail item.beer.picture, 'small'%}
+                                                {% else %}
+                                                    <img class="imageSmall img-rounded img-responsive" src="{{ asset('bundles/app/img/default.png') }}">
+                                                {% endif %}
+                                            </div>
+                                            <div class="details col-md-8 col-xs-7">
+                                                <h2 class="name">{{ item.beer.name }}</h2>
+                                                <p class="style">{{ item.beer.style }}</p>
+                                                <p class="abv">{{ item.beer.abv }}</p>
+                                                <p class="price">{{ item.price }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            {% endif %}
+                        {% elseif searchItem == 'pubs' %}
+                            {% for pub in item %}
+                                {% if pub.pub != null %}
+                                    <a href="{{ path('pub', {'name' : pub.pub.name}) }}">
+                                        <div class="col-md-6 col-xs-12 element-item b{{ loop.index%5 }}" data-category="">
+                                            <div class="media col-md-4 col-xs-5">
+                                                {% if pub.pub.picture %}
+                                                    {% thumbnail pub.pub.picture, 'small'%}
+                                                {% else %}
+                                                    <img class="imageSmall img-rounded img-responsive" src="{{ asset('bundles/app/img/default.png') }}">
+                                                {% endif %}
+                                            </div>
+                                            <div class="details col-md-8 col-xs-7">
+                                                <h2 class="name">{{ pub.pub.name }}</h2>
+                                                <p class="streerName">{{ pub.pub.address.streetName}}</p>
+                                                <p class="streetNumber">{{ pub.pub.address.streetNumber}}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

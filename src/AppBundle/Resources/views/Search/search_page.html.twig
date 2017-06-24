@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% include 'AppBundle:Partial:preloader.html.twig' %}
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+        {% include 'AppBundle:Partial:navbar.html.twig' %}
+        {% include 'AppBundle:Search:search_list.html.twig' with {'items': items, 'searchItem': searchItem, 'user': user} %}
+        {% include 'AppBundle:Partial:footer.html.twig' %}
+    </div>
+{% endblock %}

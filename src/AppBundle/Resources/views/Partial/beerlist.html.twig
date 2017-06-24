@@ -1,53 +1,36 @@
-<div class="slider-container">
-    <div class="container mh-slider">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
+<div id="beer-list" class="swiper-container-beers swiper-container-horizontal">
+    <div class="swiper-wrapper">
                 {% for beer in beers %}
                 {% if beer.beer != null %}
-                {% if loop.index0%3 == 0 %}
-                {% if loop.index0 == 0 %}
-                <div class="swiper-slide">
-                    {% else %}
-                    <div class="swiper-slide">
-                        {% endif %}
-                        {% endif %}
-                        <a href="{{ path('beer', {'name' : beer.beer.name}) }}">
-                            <div class="col-md-4">
-                                <div class="tile p{{ loop.index%5 }}">
-                                    <div class="imageSmall media">
+                    <li class="swiper-slide">
+                                    <div class="media">
+                                        <a href="{{ path('beer', {'name' : beer.beer.name}) }}">
                                         {% if beer.beer.picture %}
-                                            {% thumbnail beer.beer.picture, 'small' with{'class' : 'img-rounded img-responsive'} %}
+                                            {% thumbnail beer.beer.picture, 'small'%}
                                         {% else %}
                                             <div class="imageSmall media">
                                                 <img class="imageSmall img-rounded img-responsive"
                                                      src="{{ asset('bundles/app/img/default.png') }}">
                                             </div>
                                         {% endif %}
-
+                                        </a>
                                     </div>
-                                    <div class="details">
+                                    <div class="beer-details">
                                         <h3 class="media-heading heading">
                                             {{ beer.beer.name }}
                                         </h3>
                                         <label>Price : {{ beer.price }} din</label>
                                         {% include 'AppBundle:Partial:ratingstars.html.twig' %}
                                     </div>
-                                </div>
-                            </div>
-                        </a>
-                        {% endif %}
-                        {% if loop.index0%3 == 2 or loop.last %}</div>{% endif %}
-                    {% endfor %}</div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-               <!-- <div class="col-xs-12 beer-navigation hidden-xs">
-                <a href="#pubs" class="fa fa-chevron-left fa-3x prev" role="button"></a>
-                <a href="#pubs" class="fa fa-chevron-right fa-3x next" role="button"></a>
-                </div>-->
-            </div>
-        </div>
+                        </li>{% endif %}
+                    {% endfor %}
     </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+<div class="col-md-3 col-xs-8 col-centered">
+    <a class="btn-search" href="{{ path('search', {'searchItem' : 'beers'}) }}">See All</a>
 </div>

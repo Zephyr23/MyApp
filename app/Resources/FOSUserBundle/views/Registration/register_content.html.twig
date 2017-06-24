@@ -1,23 +1,18 @@
-
-    <div class="btn-group-justified registerfields">
+<div class="btn-group-justified registerfields">
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-
         {{ form_errors(form) }}
-
         <div class="col-md-12">
             {{ form_widget(form.username , { 'attr': {'class': 'form-control', 'placeholder': 'Username', 'id': 'username'}}) }}
         </div>
         <div class="col-md-12">
             {{ form_errors(form.username) }}
         </div>
-
         <div class="col-md-12">
         {{ form_widget(form.email , { 'attr': {'class': 'form-control', 'placeholder': 'Email', 'id': 'email'}}) }}
         </div>
         <div class="col-md-12">
         {{ form_errors(form.email) }}
         </div>
-
         <div class="col-md-12">
             {{ form_widget(form.plainPassword.first , { 'attr': {'class': 'form-control', 'placeholder': 'Password', 'id': 'password'}}) }}
         </div>
@@ -25,21 +20,16 @@
             {{ form_errors(form.plainPassword.first) }}
         </div>
 
-
         <div class="col-md-12">
             {{ form_widget(form.plainPassword.second , { 'attr': {'class': 'form-control', 'placeholder': 'Re-Password', 'id': 're-password'}}) }}
         </div>
         <div class="col-md-12">
             {{ form_errors(form.plainPassword.second) }}
         </div>
-
-
-
         {{ form_rest(form) }}
-
         <div>
             <input type="submit" value="submit" />
         </div>
         {{ form_end(form) }}
-    </div>
+</div>
 

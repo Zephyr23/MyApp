@@ -25,7 +25,7 @@
                     <li class="visible-xs"><a href="{{ path('user', {'username' : user.username}) }}"><i>{{ user.username }}</i></a><hr></li>
                     <li><a href="#"><i>pubs</i></a></li>
                     <li><a href="#"><i>beers</i></a></li>
-                    <li><a href="#contact"><i>contact</i></a><hr></li>
+                    <li><a href="#contact"><i>contact</i></a></li>
                     <li class="visible-xs"><a href={{ path('logout') }}>logout</a></li>
                         <li class="dropdown hidden-xs">
                             <a data-toggle="dropdown"><i>{{ user.username }}</i>
@@ -51,7 +51,5 @@
         <!-- /.navbar-collapse -->
     </div>
     <!--/.container -->
-    {% include 'AppBundle:Modal:loginmodal.html.twig' %}
-    {% include 'AppBundle:Modal:signupmodal.html.twig' %}
 </div>
 <!--/.navbar -->
